@@ -1,0 +1,14 @@
+[Unit]
+Description=mount /nfs/downloads
+Requires=network-online.target
+After=NetworkManager.service
+
+[Mount]
+Type=nfs
+What=192.168.1.210:/mnt/big_data/media/downloads
+Where=/nfs/downloads
+Options=_netdev,auto
+TimeoutSec=10
+
+[Install]
+WantedBy=multi-user.target

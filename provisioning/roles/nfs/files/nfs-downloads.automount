@@ -1,0 +1,9 @@
+[Unit]
+Description=mount /nfs/downloads
+
+[Automount]
+Where=/nfs/downloads
+TimeoutIdleSec=300
+
+[Install]
+WantedBy=multi-user.target

@@ -10,7 +10,7 @@ services:
       - TORRENTING_PORT=6881
     volumes:
       - ./config:/config
-      - /change_me/downloads:/downloads #optional
+      - /nfs/downloads:/downloads
     ports:
       - 8080:8080
       - 6881:6881

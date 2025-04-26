@@ -1,0 +1,29 @@
+-   name: Install NFS Client
+    apt:
+      name: nfs-common
+      state: present
+      update_cache: yes
+
+-   name: Make shared folder
+    file:
+      path: /nfs/downloads
+      state: directory
+      owner: deploy
+      group: docker
+      mode: '0755'
+
+-   name: Copy mount config
+    copy:
+      src: ../files/nfs-downloads.mount
+      dest: /etc/systemd/system/nfs-downloads.mount
+      owner: root
+      group: root
+      mode: '0644'
+
+-   name: Copy automount config
+    copy:
+      src: ../files/nfs-downloads.automount
+      dest: /etc/systemd/system/nfs-downloads.automount
+      owner: root
+      group: root
+      mode: '0644'
