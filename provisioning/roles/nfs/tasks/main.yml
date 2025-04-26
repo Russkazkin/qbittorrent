@@ -27,3 +27,13 @@
       owner: root
       group: root
       mode: '0644'
+
+-   name: systemd reload
+    systemd_service:
+      daemon_reload: true
+
+-   name: systemd service enable
+    systemd_service:
+      name: nfs-downloads.automount
+      enabled: true
+
